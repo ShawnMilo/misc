@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# requires xdotool
+
+setxkbmap dvorak # probably not required unless you're me
+xdotool type "$*"

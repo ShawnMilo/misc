@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# requires Python, with Markdown pip installed
+
+cat << EOF > /tmp/codehilite.json
+{
+    "codehilite": {
+        "noclasses": true,
+        "linenums": false,
+        "guess_lang": false,
+        "pygments_style": "tango"
+    }
+}
+EOF
+
+# cat << EOF 
+# <style type="text/css">
+#     pre{
+#         font-size: 50pt;
+#         line-height: 30px;
+#         font-face: Courier New, monospace;
+#         white-space: pre;
+#     }
+# </style>
+# EOF
+
+markdown_py -x codehilite -c /tmp/codehilite.json  $1
